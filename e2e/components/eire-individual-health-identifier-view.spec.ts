@@ -1,16 +1,16 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('component page: ireland-individual-health-identifier-input', () => {
+test.describe('component page: eire-individual-health-identifier-view', () => {
   test('loads the component page with the slug query parameter', async ({ page }) => {
-    const res = await page.goto('/components/component.html?slug=ireland-individual-health-identifier-input');
+    const res = await page.goto('/components/component.html?slug=eire-individual-health-identifier-view');
     expect(res, 'navigation response').not.toBeNull();
     expect(res!.status(), 'http status').toBeLessThan(400);
   });
 
   test('renders the component name as a heading once content is loaded', async ({ page }) => {
-    await page.goto('/components/component.html?slug=ireland-individual-health-identifier-input');
+    await page.goto('/components/component.html?slug=eire-individual-health-identifier-view');
     await expect(
-      page.getByRole('heading', { name: new RegExp('IrelandIndividualHealthIdentifierInput') }).first()
+      page.getByRole('heading', { name: new RegExp('EireIndividualHealthIdentifierView') }).first()
     ).toBeVisible();
   });
 });
